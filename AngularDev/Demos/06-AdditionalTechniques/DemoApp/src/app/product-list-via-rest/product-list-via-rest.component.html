@@ -1,0 +1,15 @@
+<div>
+    <div class="halfColumn">
+        <h1>Products (technique 1)</h1>
+        <div *ngFor="let p of productsTechnique1 | async">
+            <app-product-item [product]="p"></app-product-item>
+        </div>
+    </div>
+
+    <div class="halfColumn">
+        <h1>Products (technique 2)</h1>
+        <div *ngFor="let p of productsTechnique2">
+            <app-product-item [product]="p"></app-product-item>
+        </div>
+    </div>
+</div>

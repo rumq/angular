@@ -1,0 +1,19 @@
+<h1>Skills for {{firstName}} {{lastName}}</h1>
+
+<!-- ngFor syntax 1 - Shortcut syntax, Angular puts the li inside an ng-template tag implicitly -->
+<div>Skills (syntax 1):
+    <ul>
+        <li *ngFor="let s of skills; let i=index">
+            [Skill {{i+1}}] {{s}}
+        </li>
+    </ul>
+</div>
+
+<!-- ngFor syntax 2 - Defining for-loop in an ng-template tag -->
+<div>Skills (syntax 2): 
+    <ul>
+        <ng-template ngFor let-s [ngForOf]="skills" let-i="index">
+            <li>[Skill {{i+1}}] {{s}}</li>
+        </ng-template>
+    </ul>
+</div>

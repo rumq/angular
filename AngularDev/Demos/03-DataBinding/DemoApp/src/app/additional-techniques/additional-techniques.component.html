@@ -1,0 +1,7 @@
+<h1>Skills for {{name}}</h1>
+
+<input #newSkill (keyup.enter)="addSkill(newSkill)">
+
+<button (click)="addSkill(newSkill)">Add</button>
+
+<p>{{skills}}</p>

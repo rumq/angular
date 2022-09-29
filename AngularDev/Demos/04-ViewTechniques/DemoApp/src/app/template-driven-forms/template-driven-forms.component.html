@@ -1,0 +1,72 @@
+<h1>Template-driven forms</h1>
+
+<!-- 
+  Note: Each control in an Angular form can have the following states:
+
+    pristine  - true if the user has not yet interacted with the control.
+    dirty     - true if the user has interacted with the control.
+    
+    untouched - true if the control has not yet lost focus.
+    touched   - true if the control has lost focus.
+    
+    valid     - true if the control is valid.
+    invalid   - true if the control is invalid.
+-->
+  
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+    <p>
+        <label>Description</label>
+        <input type="text" [(ngModel)]="currentProduct.description" name="description" #description="ngModel" required>
+        <span [hidden]="description.valid || description.pristine" class="error">Description is required</span>
+    </p>
+
+    <p>
+        <label>Category</label>
+        <select [(ngModel)]="currentProduct.category" name="category" #category="ngModel" required>
+            <option *ngFor="let c of categories" [ngValue]="c">{{c}}</option>
+        </select>
+        <span [hidden]="category.valid || category.pristine" class="error">Category is required</span>
+
+    <p>
+        <label>Category (as object)</label>
+        <select [compareWith]="categoryById" [(ngModel)]="currentProduct.categoryAsObject" name="categoryAsObject" #categoryAsObject="ngModel" required>
+            <option *ngFor="let c of categoriesAsObjects" [ngValue]="c">{{c.name}}</option>
+        </select>
+        <span [hidden]="categoryAsObject.valid || categoryAsObject.pristine" class="error">Category (as object) is required</span>
+    </p>
+    
+    <!-- Demonstrate using the "email" validation directive -->
+    <p>
+        <label>Supplier email</label>
+        <input type="email" [(ngModel)]="currentProduct.supplierEmail" name="supplierEmail" #supplierEmail="ngModel" required email>
+        <span [hidden]="!supplierEmail.hasError('required') || supplierEmail.pristine"  class="error">Supplier email is required</span>
+        <span [hidden]="!supplierEmail.hasError('email')    || supplierEmail.untouched" class="error">Supplier email incorrect format</span>
+    </p>
+
+    <p>
+        <label>Price</label>
+        <input type="number" [(ngModel)]="currentProduct.price" name="price" #price="ngModel" required>
+        <span [hidden]="price.valid || price.pristine" class="error">Price is required</span>
+    </p>
+
+    <p>
+        <!-- Demonstrate using the "minlength" and "maxlength" validation directives -->
+        <label>Additional info</label>
+        <input type="text" [(ngModel)]="currentProduct.additionalInfo" name="additionalInfo" #additionalInfo="ngModel" minlength="10" maxlength="25" required>
+        <span [hidden]="!additionalInfo.hasError('minlength') || additionalInfo.untouched" class="error">Min length 10 characters</span>
+        <span [hidden]="!additionalInfo.hasError('maxlength') || additionalInfo.untouched" class="error">Max length 25 characters</span>
+    </p>
+
+    <p>
+        <button type="submit" [disabled]="!f.valid">Submit</button>
+    </p>
+
+</form>
+
+<div [hidden]="allProducts.length == 0">
+    <h3>Products added so far</h3>
+    <ul>
+        <li *ngFor="let p of allProducts">{{p | json}}</li>
+    </ul>
+</div>

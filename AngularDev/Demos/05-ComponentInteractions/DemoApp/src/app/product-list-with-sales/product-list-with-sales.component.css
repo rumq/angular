@@ -1,0 +1,9 @@
+div.wideColumn {
+    float: left;
+    width: 60%;
+}
+
+div.narrowColumn {
+    float: left;
+    width: 40%;
+}

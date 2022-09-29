@@ -1,0 +1,27 @@
+<h1>Person details</h1>
+<div>Full name: {{firstName}} {{lastName}} </div>
+<div>Nationality: {{nationality}} </div>
+<div>Email: {{emailAddress}} </div>
+
+<div>
+    Salary: {{salary}} 
+</div>
+
+<!-- ngIf and an explicit "then" template -->
+<div *ngIf="salary > 40000; then hiTaxTemplate1"></div>
+<ng-template #hiTaxTemplate1>
+    <div style="color:red">[Salary is {{salary - 40000}} above tax threshold]</div>
+</ng-template>
+
+<!-- ngIf and explicit "then" and "else" templates -->
+<div *ngIf="salary > 40000; then hiTaxTemplate2 else loTaxTemplate"></div>
+<ng-template #hiTaxTemplate2>
+    <div style="color:orange">[You earn too much mate]</div>
+</ng-template>
+<ng-template #loTaxTemplate>
+    <div style="color:green">[Salary is {{40000 - salary}} below the tax threshold]</div>
+</ng-template>
+    
+<div>
+    <button (click)="payRise()">£5k pay rise</button>
+</div>

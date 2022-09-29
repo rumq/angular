@@ -1,0 +1,25 @@
+<h1>Simple pipes</h1>
+
+<div>
+    Name (in uppercase): {{ name | uppercase }} <br>
+    Name (in lowercase): {{ name | lowercase }} <br>
+    Team (in titlecase): {{ team | titlecase }}
+</div>
+
+<div>
+    Additional info (JSON): {{ additionalInfo | json }}
+</div>
+
+<div>
+    Rating (to 4dp): {{ rating | number:'1.4-4' }}<br>
+    Rating (%):      {{ rating | percent:'2.2-2' }}
+</div>
+<div>
+    Salary (code):          {{ salary | currency:'CAD':'code':'4.2-2' }}  <br>
+    Salary (symbol):        {{ salary | currency:'CAD':'symbol':'4.2-2' }}  <br>
+    Salary (symbol-narrow): {{ salary | currency:'CAD':'symbol-narrow':'4.2-2' }}  <br>
+</div>
+<div>
+    Timestamp (date): {{ timestamp | date }} <br>
+    Timestamp (time): {{ timestamp | date:'hh:mm:ss a' }}
+</div>

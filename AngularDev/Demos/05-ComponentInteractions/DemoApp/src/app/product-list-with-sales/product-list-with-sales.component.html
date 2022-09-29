@@ -1,0 +1,19 @@
+<div>
+    <div class="wideColumn">
+        <h1>Products</h1>
+        <div *ngFor="let p of products">
+            <app-product-item-with-sales 
+                [product]="p" 
+                (sale)="onSale($event)">
+            </app-product-item-with-sales>
+        </div>
+    </div>
+    
+    <div class="narrowColumn">
+        <h1>Sales</h1>
+        <ul>
+            <li *ngFor="let s of sales">{{s}}</li>
+        </ul>
+    </div>
+</div>
+

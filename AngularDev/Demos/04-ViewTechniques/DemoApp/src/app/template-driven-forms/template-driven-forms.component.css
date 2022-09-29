@@ -1,0 +1,25 @@
+label {
+    width: 200px;
+    float: left;
+}
+
+input, select {
+    width: 200px;
+    box-sizing: border-box;
+ }
+
+.ng-pristine[required], .ng-pristine.required {
+    border-left: 5px solid lightblue;
+}
+
+.ng-valid[required], .ng-valid.required {
+    border-left: 5px solid green;
+}
+
+.ng-invalid:not(form).ng-dirty {
+    border-left: 5px solid red;
+}
+
+.error {
+    color: red;
+}    

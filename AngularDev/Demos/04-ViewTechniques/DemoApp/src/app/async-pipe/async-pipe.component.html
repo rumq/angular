@@ -1,0 +1,20 @@
+<h1>async pipe</h1>
+
+<!-- Display Promise<Date> value -->
+<div>
+    First goal: 
+    {{ firstGoal | async | date:'hh:mm:ss a' }}
+</div>
+
+<!-- Display Observable<Goal> value, and use async pipe to pluck out its values -->
+<div>
+    Goal {{ (mostRecentGoal | async)?.goalNumber }}
+    at   {{ (mostRecentGoal | async)?.goalTimestamp | date:'hh:mm:ss a' }}
+</div>
+
+<!-- Display Observable<Goal> value using Angular "as" keyword for convenience -->
+<div *ngIf='mostRecentGoal | async as mrg'>
+    Goal {{ mrg.goalNumber }}
+    at   {{ mrg.goalTimestamp | date:'hh:mm:ss a' }}
+</div>
+    

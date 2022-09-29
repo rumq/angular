@@ -1,0 +1,47 @@
+<h1>Reactive forms</h1>
+
+<!-- Note, the novalidate attribute disables the normal HTML validation, so Angular validation can kick-in -->
+<form [formGroup]="productForm" (ngSubmit)="onSubmit(productForm)" novalidate>		  
+
+	<p>
+		<label>Description</label>
+		<input type="text" formControlName="description">
+        <span [hidden]="productForm['controls']['description'].valid || productForm['controls']['description'].pristine" class="error">Description is required</span>
+    </p>
+	
+	<p>
+		<label>Category</label>
+		<input type="text" formControlName="category">
+        <span [hidden]="productForm['controls']['category'].valid || productForm['controls']['category'].pristine" class="error">Category is required</span>
+    </p>
+	
+	<div formGroupName="pricePolicy">
+		<p>
+			<label>Low price</label>
+			<input type="text" formControlName="lowPrice">
+            <span [hidden]="productForm['controls']['pricePolicy'].get('lowPrice')?.valid || productForm['controls']['pricePolicy'].get('lowPrice')?.pristine" class="error">Price is below minimum</span>
+        </p>
+		<p>
+			<label>High price</label>
+			<input type="text" formControlName="highPrice">
+            <span [hidden]="productForm['controls']['pricePolicy'].get('highPrice')?.valid || productForm['controls']['pricePolicy'].get('highPrice')?.pristine" class="error">Price is below minimum</span>
+        </p>
+	</div>	
+    
+    <p>
+	    <button type="submit" [disabled]="!productForm.valid">Submit</button> 
+    </p>
+    
+</form>
+
+<div>
+    <h3>Product form value</h3>
+    {{ productForm.value | json }}
+</div>
+
+<div [hidden]="products.length == 0">
+	<h3>Products added so far</h3>
+	<ul>
+		<li *ngFor="let p of products">{{p | json}}</li>
+	</ul>
+</div>

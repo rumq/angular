@@ -1,0 +1,22 @@
+<h1>Person details</h1>
+<div>Full name: {{firstName}} {{lastName}} </div>
+<div>Nationality: {{nationality}} </div>
+<div>Email: {{emailAddress}} </div>
+
+<div>
+	Salary: {{salary}} 
+</div>
+
+<!-- ngIf syntax 1, using shortcut syntax -->
+<div *ngIf="salary > 40000" style="color:red">
+    [Upper tax payable on {{salary - 40000}}]
+</div>
+
+<!-- ngIf syntax 2 - Defining in an ng-template tag -->
+<ng-template [ngIf]="salary > 40000">
+    <div style="color:green">[Upper tax payable on {{salary - 40000}}]</div>
+</ng-template>
+	
+<div>
+	<button (click)="payRise()">£5k pay rise</button>
+</div>

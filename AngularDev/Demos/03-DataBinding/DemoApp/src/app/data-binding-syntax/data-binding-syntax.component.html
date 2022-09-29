@@ -1,0 +1,18 @@
+<div [hidden]='!verbose'>
+    <h1>Person details - verbose</h1>
+    <div>Full name: {{firstName}} {{lastName}} </div>
+    <div>Nationality: {{nationality}} </div>
+    <div>Email: {{emailAddress}} </div>
+    <div>Company car: {{companyCar?.make}}</div>
+    <div [class.emphasis]="salary >= 40000">Salary with CSS class: {{salary}}</div>
+    <div [style.color]="salary >= 40000 ? 'red' : 'green'">Salary with style: {{salary}}</div>
+</div>
+
+<div [hidden]='verbose'>
+    <h1>Person details - brief</h1>
+    <div>{{lastName}}, {{nationality}} </div>
+</div>
+
+<div>
+    <button (click)="onVerboseToggle($event)">{{label()}}</button>
+</div>

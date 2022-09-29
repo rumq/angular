@@ -1,0 +1,25 @@
+<h1>Nationality details for {{firstName}} {{lastName}}</h1>
+
+<div>
+    Country:
+    
+    <!-- ngSwitch syntax 1 - Shortcut syntax, Angular puts branches inside ng-template tags implicitly -->
+	<span [ngSwitch]="nationality">
+		<span *ngSwitchCase="'Norge'">Norway</span>
+		<span *ngSwitchCase="'UK'">UK</span>
+		<span *ngSwitchDefault>[Other country]</span>
+	</span>
+</div>
+
+<div>
+    Dialling code:
+        
+    <!-- ngSwitch syntax 2 - Defining branches explicitly in ng-template tags -->
+	<span [ngSwitch]="nationality">
+		<ng-template [ngSwitchCase]="'Norge'">+47</ng-template>
+		<ng-template [ngSwitchCase]="'UK'">+44</ng-template>
+		<ng-template ngSwitchDefault>[Other dialling code]</ng-template>
+	</span>
+
+</div>
+

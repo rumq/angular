@@ -1,0 +1,24 @@
+<h1>Person details</h1>
+<div>Full name: {{firstName}} {{lastName}} </div>
+<div>Nationality: {{nationality}} </div>
+<div>Email: {{emailAddress}} </div>
+<div>Salary: <b> {{salary}} </b> </div>
+
+<div>
+    One-way data binding
+    <input type='number' [value] = "salary">
+</div>
+
+<div>
+    Two-way data binding
+    <input type='number' [(ngModel)] = "salary">
+</div>
+
+<div>
+    Two-way data binding (delayed binding until "done")
+    <input type='number' [value]="salary" (change)="onSalaryChange($event)">
+</div>
+
+<div>
+    <button (click)="payRise()">£5k pay rise</button>
+</div>
