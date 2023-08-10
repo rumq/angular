@@ -9,7 +9,12 @@ ng version
 ng new DemoApp
 # run project
 cd DemoApp
-ng serve --open
+ng serve 
+```
+
+AppModule is the container of all components. It is the root module of the application.
+A Component renders HTML.
+
 
 
 ```
