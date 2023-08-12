@@ -23,6 +23,7 @@ export class DataBindingSyntaxComponent {
     this.lastName = 'Bachchan';
     this.nationality = 'Indian';
     this.emailAddress = 'amitabh.bachchan@gmail.com';
+    // this.companyCar = new Car('BMW', 'X5', 2019);
     this.companyCar = new Car('BMW', 'X5', 2019);
     this.salary = 100000;
     this.verbose = true;
