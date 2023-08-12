@@ -1,5 +1,19 @@
-<div>
+<div [hidden]='!verbose'>
   <h1>Person details - verbose</h1>
   <div>Full Name : {{firstName}} </div>
+  <div>Last Name : {{lastName}}</div>
+  <div>Nationality: {{nationality}}</div>
+  <div>Email: {{emailAddress}}</div>
+  <div>Salary with CSS class: {{salary}}</div>
+  <div>Car: {{companyCar?.make}}</div>
 </div>
-
+<div [hidden]='verbose'>
+  <h1>Person details - brief</h1>
+  <div> {{lastName}} , {{nationality}}</div>
+</div>
+<div hidden>
+  <h1> Person details - Always hidden</h1>
+</div>
+<div>
+  <button>{{label()}}</button>
+</div>
