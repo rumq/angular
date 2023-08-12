@@ -22,7 +22,7 @@ export class TwoWayBindingComponent {
   }
 
   payRise() {
-    this.salary += 10000;
+    this.salary = this.salary + 10000;
   }
 
   onSalaryChange($event: any) {
