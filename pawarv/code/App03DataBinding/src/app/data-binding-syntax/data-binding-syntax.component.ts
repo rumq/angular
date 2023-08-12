@@ -24,10 +24,14 @@ export class DataBindingSyntaxComponent {
     this.nationality = 'Indian';
     this.emailAddress = 'amitabh.bachchan@gmail.com';
     this.companyCar = new Car('BMW', 'X5', 2019);
-    this.salary = 1000000;
+    this.salary = 100000;
     this.verbose = true;
   }
   label() {
     return this.verbose ? 'Show Brief' : 'Show Verbose';
+  }
+
+  toggle() {
+    this.verbose = !this.verbose;
   }
 }

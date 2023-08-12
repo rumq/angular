@@ -4,7 +4,10 @@
   <div>Last Name : {{lastName}}</div>
   <div>Nationality: {{nationality}}</div>
   <div>Email: {{emailAddress}}</div>
-  <div>Salary with CSS class: {{salary}}</div>
+  <div class="emphasis">Salary with CSS class : Non NG: {{salary}}</div>
+  <div style="color: red;">Salary with inline style : Non NG: {{salary}}</div>
+  <div [class.emphasis]="salary >= 50000">Salary with CSS class: {{salary}}</div>
+  <div [style.color]="salary >= 50000 ? 'red' : 'green'">Salary with inline style: {{salary}}</div>
   <div>Car: {{companyCar?.make}}</div>
 </div>
 <div [hidden]='verbose'>
@@ -15,5 +18,5 @@
   <h1> Person details - Always hidden</h1>
 </div>
 <div>
-  <button>{{label()}}</button>
+  <button (click)="toggle()">{{label()}}</button>
 </div>

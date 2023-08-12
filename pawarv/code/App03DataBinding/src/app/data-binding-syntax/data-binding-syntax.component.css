@@ -1,0 +1,11 @@
+.emphasis {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: red;
+}
+
+div {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
