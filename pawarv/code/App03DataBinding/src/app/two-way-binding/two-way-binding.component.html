@@ -6,7 +6,7 @@
 
 <div>
   One way data binding
-  <input type='number' [value]="salary" >
+  <input type='number' [value]="salary">
 </div>
 
 <div>
@@ -14,3 +14,11 @@
   <input type='number' [(ngModel)]="salary">
 </div>
 
+<div>
+  Two way binding (delayed binding until done)
+  <input type="number" [value]="salary" (change)="onSalaryChange($event)">
+</div>
+
+<div>
+  <button (click)="payRise()">pay rise</button>
+</div>
