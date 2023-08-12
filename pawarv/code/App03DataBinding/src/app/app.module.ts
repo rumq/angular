@@ -8,6 +8,7 @@ import { DataBindingSyntaxComponent } from './data-binding-syntax/data-binding-s
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 import { FormsModule } from '@angular/forms';
 import { NgIfComponent } from './ng-if/ng-if.component';
+import { NgIfThenElseComponent } from './ng-if-then-else/ng-if-then-else.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { NgIfComponent } from './ng-if/ng-if.component';
     HomeComponent,
     DataBindingSyntaxComponent,
     TwoWayBindingComponent,
-    NgIfComponent
+    NgIfComponent,
+    NgIfThenElseComponent
   ],
   imports: [
     BrowserModule,
