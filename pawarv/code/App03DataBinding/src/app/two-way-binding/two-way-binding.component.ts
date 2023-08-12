@@ -27,6 +27,6 @@ export class TwoWayBindingComponent {
 
   onSalaryChange($event: any) {
     this.salary = $event.target.value;
-  }
+    }
 
 }
