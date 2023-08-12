@@ -7,13 +7,15 @@ import { HomeComponent } from './home/home.component';
 import { DataBindingSyntaxComponent } from './data-binding-syntax/data-binding-syntax.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 import { FormsModule } from '@angular/forms';
+import { NgIfComponent } from './ng-if/ng-if.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DataBindingSyntaxComponent,
-    TwoWayBindingComponent
+    TwoWayBindingComponent,
+    NgIfComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,16 @@
+<h1>Person Details</h1>
+<div>Full Name : {{ firstName }} {{ lastName }}</div>
+<div>Nationality : {{ nationality }}</div>
+<div>Email : {{emailAddress}} </div>
+<div>Salary: {{salary}}</div>
+
+<div *ngIf="salary > 40000"> Salary is greater than 40,000 [Shortcut syntax]</div>
+
+<ng-template [ngIf]="salary> 40000">
+  <div>
+    Salary is greater than 40,000 [Using ngtemplate]
+  </div>
+</ng-template>
+<div>
+  <button (click)="payRise()"> Pay Rise</button>
+</div>
