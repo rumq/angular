@@ -1,0 +1,24 @@
+<h1>  App 02 Single Page (app.component.html)</h1>
+<nav>
+  <a routerLink="/" routerLinkActive="active">Home</a>&nbsp;|&nbsp;
+  <a routerLink="/about" routerLinkActive="active">About</a>&nbsp;|&nbsp;
+  <a routerLink="/contact" routerLinkActive="active">Contact</a>&nbsp;|&nbsp;
+</nav>
+
+<h3> Message from app.component.html : <p></p>
+  What you see below the solid line comes from router-outlet. <p> </p>
+  Imagine that the router-outlet is replaced by a component. <p></p>
+  Which component? It depends on which link you click. <p>
+
+  </p> If you click on Home, i.e the link 'localhost:4200', then the router-outlet will be replaced by app-home which results in home.component.html being rendered with help from HomeComponent. <p>
+
+</p> If you click on About, i.e the link 'localhost:4200/about', then the router-outlet will be replaced by app-about which results in about.component.html being rendered with help from AboutComponent.
+
+</h3> <p></p>
+<router-outlet></router-outlet>
+
+___________________________________________ <p></p>
+This is from app.component.html
+<app-home><app-home>
+___________________________________________
+

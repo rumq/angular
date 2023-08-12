@@ -27,3 +27,10 @@ A Component renders HTML.
   styles: [`h1 { color: red; }`]
 })
 ```
+
+```sh
+# Run App01GettingStarted app
+cd /Users/vikrampawar/github/angular/pawarv/code/App01GettingStarted
+ng serve --open
+```
+
