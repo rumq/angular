@@ -7,6 +7,8 @@ export BASE=~/github/angular
 cd $BASE/AngularDev/Demos/03-DataBinding/DemoApp
 npm install
 ng serve --open
+# open on a different port
+ng serve --open --port 4201
 ```
 
 ```sh

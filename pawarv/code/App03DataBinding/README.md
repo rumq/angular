@@ -1,27 +1,38 @@
 # App03DataBinding
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+Running the existing app
 
-## Development server
+```sh
+# set base path
+export BASE=~/github/angular 
+# Run the Course app
+cd $BASE/AngularDev/Demos/03-DataBinding/DemoApp
+npm install
+ng serve --open
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Running this app
 
-## Code scaffolding
+```sh
+# Run App03DataBinding app
+cd $BASE/pawarv/code/App03DataBinding
+ng serve --open
+# open on a different port
+ng serve --open --port 4201
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
 
-## Build
+Creating this app
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```sh
+# Create a new app
+cd $BASE/pawarv/code
+ng new App03DataBinding
+# Create home component
+cd App03DataBinding
+ng g c home
+# Create data-binding-syntax component
+ng g c data-binding-syntax
+# Create two-way-binding component
+ng g c two-way-binding
+```
