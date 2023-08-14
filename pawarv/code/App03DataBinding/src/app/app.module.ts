@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { NgIfComponent } from './ng-if/ng-if.component';
 import { NgIfThenElseComponent } from './ng-if-then-else/ng-if-then-else.component';
 import { NgForComponent } from './ng-for/ng-for.component';
+import { NgSwitchComponent } from './ng-switch/ng-switch.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NgForComponent } from './ng-for/ng-for.component';
     TwoWayBindingComponent,
     NgIfComponent,
     NgIfThenElseComponent,
-    NgForComponent
+    NgForComponent,
+    NgSwitchComponent
   ],
   imports: [
     BrowserModule,
