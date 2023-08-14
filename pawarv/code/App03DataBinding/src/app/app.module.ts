@@ -11,6 +11,7 @@ import { NgIfComponent } from './ng-if/ng-if.component';
 import { NgIfThenElseComponent } from './ng-if-then-else/ng-if-then-else.component';
 import { NgForComponent } from './ng-for/ng-for.component';
 import { NgSwitchComponent } from './ng-switch/ng-switch.component';
+import { AdditionalTechniquesComponent } from './additional-techniques/additional-techniques.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NgSwitchComponent } from './ng-switch/ng-switch.component';
     NgIfComponent,
     NgIfThenElseComponent,
     NgForComponent,
-    NgSwitchComponent
+    NgSwitchComponent,
+    AdditionalTechniquesComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import {NgIfComponent} from "./ng-if/ng-if.component";
 import {NgIfThenElseComponent} from "./ng-if-then-else/ng-if-then-else.component";
 import {NgForComponent} from "./ng-for/ng-for.component";
 import {NgSwitchComponent} from "./ng-switch/ng-switch.component";
+import {AdditionalTechniquesComponent} from "./additional-techniques/additional-techniques.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: 'ng-if', component: NgIfComponent},
   {path: 'ng-if-then-else', component: NgIfThenElseComponent},
   {path: 'ng-for', component: NgForComponent},
-  {path: 'ng-switch', component: NgSwitchComponent}
+  {path: 'ng-switch', component: NgSwitchComponent},
+  {path: 'additional-techniques', component: AdditionalTechniquesComponent}
 
 ];
 
