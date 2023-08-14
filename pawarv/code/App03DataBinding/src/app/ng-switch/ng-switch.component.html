@@ -1,1 +1,22 @@
-<p>ng-switch works!</p>
+<h1> Switch </h1>
+
+<div> Using shortcut
+  <span [ngSwitch]="nationality">
+    <span *ngSwitchCase="'Indian'">Bharat</span>
+    <span *ngSwitchCase="'UK'">British</span>
+    <span *ngSwitchDefault>Global</span>
+  </span>
+</div>
+
+<p></p>
+
+<div> Using template
+  <span [ngSwitch]="nationality">
+    <ng-template [ngSwitchCase]="'Indian'">Bharat</ng-template>
+    <ng-template [ngSwitchCase]="'UK'">British</ng-template>
+    <ng-template [ngSwitchDefault]>Global</ng-template>
+
+  </span>
+</div>
+
+
