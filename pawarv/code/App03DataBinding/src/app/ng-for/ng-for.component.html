@@ -1,1 +1,29 @@
-<p>ng-for works!</p>
+<h1>Person Details - ng for </h1>
+<div>Skills for  {{ firstName }} {{ lastName }}</div>
+
+<p></p>
+<div> List skills using *ngFor
+  <ul>
+    <li *ngFor="let s of skills;">
+      {{s}}
+    </li>
+  </ul>
+</div>
+
+<div> List index numbers
+  <ul *ngFor="let s of skills; let i=index">
+    <li>index - {{i}}</li>
+  </ul>
+</div>
+
+<div> List using ng-template tag
+  <ul>
+    <ng-template ngFor let-ss [ngForOf]="skills" let-increment="index">
+      <li>Skill - {{ss}}, index - {{increment}}</li>
+    </ng-template>
+
+  </ul>
+
+</div>
+
+
