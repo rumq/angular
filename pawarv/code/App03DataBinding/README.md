@@ -35,4 +35,9 @@ ng g c home
 ng g c data-binding-syntax
 # Create two-way-binding component
 ng g c two-way-binding
+# delete ng component ngFor using ng
+# this how to delete a component in angular
+ng g c ngFor
+ng g c ngFor
+
 ```
