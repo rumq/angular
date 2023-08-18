@@ -16,9 +16,10 @@ Running this app
 ```sh
 # Run App03DataBinding app
 cd $BASE/pawarv/code/App03DataBinding
-ng serve --open
+# use node version
+nvm use node 18.17.1
 # open on a different port
-ng serve --open --port 4201
+ng serve --open --port 4202
 
 ```
 

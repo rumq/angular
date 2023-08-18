@@ -1,8 +1,13 @@
-<h1> Additional Techniques </h1>
+<h1>Additional Techniques</h1>
 
-<input #skillId (keyup.enter)="addSkill(skillId)">
+<label>Enter does nothing. Press button </label>
+<input #skillId />
 <button (click)="addSkill(skillId)">Add</button>
 
+<p>
+  <label>Enter of input the same as the button click </label>
+  <input #skillIdKeyUp (keyup.enter)="addSkill(skillIdKeyUp)" />
+  <button (click)="addSkill(skillIdKeyUp)">Add</button>
+</p>
 
-
-<p>{{skills}}</p>
+<p>{{ skills }}</p>
