@@ -1,0 +1,26 @@
+<h2>Simple pipes</h2>
+<div>
+  Timestamp (date): {{ today | date }} <br>
+  Timestamp (time): {{ today | date:'hh:mm:ss a' }}
+  <p>Today is {{ today | date }}</p>
+  <p>Today is {{ today | date:'fullDate' }}</p>
+  <p>Today is {{ today | date:'EEEE' }}</p>
+  <p>Today is {{ today | date:'EEEE' | uppercase }}</p>
+
+</div>
+
+<p> Name in title case {{ name | titlecase}}</p>
+
+<p> JSON Value {{ jsonval | json}}</p>
+
+<p>Format number 4 decimal places {{ height | number: '1.4-4' }}</p>
+<p>Percent {{ height}} -> 2.28 : {{ height | percent: '2.2-8'}}</p>
+<p>Percent .01 -> 1.2-8 : {{ .01 | percent: '1.2-8'}}</p>
+<p>Percent .01 -> 1.1-8 : {{ .01 | percent: '1.1-8'}}</p>
+<p>Percent .01 -> 2.2-8 : {{ .01 | percent: '2.2-8'}}</p>
+
+<div>
+  Salary (code):          {{ salary | currency:'CAD':'code':'4.2-2' }}  <br>
+  Salary (symbol):        {{ salary | currency:'CAD':'symbol':'4.2-2' }}  <br>
+  Salary (symbol-narrow): {{ salary | currency:'CAD':'symbol-narrow':'4.2-2' }}  <br>
+</div>
