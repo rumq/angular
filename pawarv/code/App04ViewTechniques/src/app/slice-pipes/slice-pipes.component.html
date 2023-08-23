@@ -1,0 +1,48 @@
+<h2>Slice pipes</h2>
+<div>
+  All skills {{ skills | json }}  ==> skills
+  <ul>
+    <li *ngFor="let skill of skills">
+      {{skill}}
+      </li>
+  </ul>
+</div>
+<div>
+  First 2 skills {{ skills | slice:0:2 | json }} ==> skills | slice:0:2
+  <ul>
+    <li *ngFor="let skill of skills | slice:0:2">
+      {{skill}}
+      </li>
+  </ul>
+</div>
+
+<div>
+  All except first 2 skills {{ skills | slice:2 | json }} ==> skills | slice:2
+  <ul>
+    <li *ngFor="let skill of skills | slice:2">
+      {{skill}}
+      </li>
+  </ul>
+</div>
+
+<div>
+  Last 2 skills {{ skills | slice:-2 | json }} ==> skills | slice:-2
+  <ul>
+    <li *ngFor="let skill of skills | slice:-2">
+      {{skill}}
+      </li>
+  </ul>
+</div>
+
+<div>
+  All except the Last 2 skills {{ skills | slice:0:-2 | json }} ==> skills | slice:0:-2
+  <ul>
+    <li *ngFor="let skill of skills | slice:0:-2">
+      {{skill}}
+      </li>
+  </ul>
+</div>
+
+
+
+
