@@ -9,7 +9,14 @@ export class AdditionalTechniquesComponent {
   name = 'Amitabh Bacchan';
   skills = 'Skills :';
 
+  constructor() {
+    this.name = 'Vikram ';
+    this.skills = 'Angular :';
+  }
+
+
   addSkill(skill: HTMLInputElement) {
+
     // get the value from the html input and set the data component
     this.skills += skill.value + ' ';
     // reset the html input field
