@@ -1,13 +1,19 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnDestroy, ViewChild } from '@angular/core';
 import { BesrCreateModalComponent } from '../besr-create-modal/besr-create-modal.component';
-import { Subscription } from 'rxjs';
+import { Subscription, first } from 'rxjs';
 
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css'],
 })
-export class TestComponent {
+export class TestComponent implements OnDestroy {
+  ngOnDestroy(): void {
+    if (this.besrCreateModalConfirmSubs) {
+      this.besrCreateModalConfirmSubs.unsubscribe();
+    }
+  }
+
   @ViewChild('besrCreateModal') besrCreateModal!: BesrCreateModalComponent;
   protected besrCreateModalConfirmSubs!: Subscription;
 
@@ -18,11 +24,15 @@ export class TestComponent {
       this.besrCreateModalConfirmSubs.unsubscribe();
     }
 
-    this.besrCreateModalConfirmSubs = this.besrCreateModal.onConfirm.subscribe( modal => {
-      console.log('TestComponent: callback after confirm is clicked');
-    });
+    this.besrCreateModalConfirmSubs = this.besrCreateModal.onConfirm
+      .pipe(first())
+      .subscribe(modal => {
+        console.log('TestComponent: callback after confirm is clicked');
+        modal.disableActions = true;
+      });
 
     this.besrCreateModal.show();
 
+    return;
   }
 }

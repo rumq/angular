@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { ModalDirective } from 'ngx-bootstrap/modal';
 import { Subject } from 'rxjs';
 
@@ -8,6 +8,10 @@ import { Subject } from 'rxjs';
   styleUrls: ['./besr-create-modal.component.css'],
 })
 export class BesrCreateModalComponent {
+
+  @Input() public disableActions!: boolean;
+
+
   @ViewChild('modal', { static: true }) private modal!: ModalDirective;
 
   private onShowStream!: Subject<BesrCreateModalComponent>;
